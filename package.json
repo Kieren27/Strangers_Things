@@ -17,7 +17,6 @@
   "bugs": {
     "url": "https://github.com/Kieren27/Strangers_Things/issues"
   },
-  "homepage": "https://github.com/Kieren27/Strangers_Things#readme",
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
