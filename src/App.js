@@ -1,6 +1,12 @@
 import React from "react";
 import { Route, Link } from "react-router-dom";
 
+import {
+    Home,
+    Account,
+    Posts
+} from './components';
+
 const App = () => {
     return (
         <>
@@ -11,15 +17,15 @@ const App = () => {
             </nav>
 
             <Route exact path="/">
-                <h1>Welcome to Stranger's Things!</h1>
+                <Home />
             </Route>
             
             <Route path="/account">
-                <h1>My Account</h1>
+                <Account />
             </Route>
 
             <Route path="/posts">
-                <h1>Posts</h1>
+                <Posts />
             </Route>
         </>
     )
