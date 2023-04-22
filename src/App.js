@@ -24,7 +24,11 @@ const App = () => {
 
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/users">Users (Login/Register)</Link>
+                    {
+                        token
+                            ? <Link to="users/me">My Profile</Link>
+                            : <Link to="users/login">Login</Link>
+                    }
                     <Link to="/posts">Posts</Link>
                 </nav>
 
