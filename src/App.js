@@ -5,7 +5,8 @@ import {
     Home,
     Posts,
     // Register,
-    // Login
+    // Login,
+    // Profile,
 } from './components';
 
 const App = () => {
