@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Route, Link } from "react-router-dom";
 
 import {
@@ -10,6 +10,14 @@ import {
 } from './components';
 
 const App = () => {
+    const [token, setToken] = useState(null);
+    const [user, setUser] = useState(null);
+
+    useEffect (() => {
+        console.log("TOKEN: " + token);
+        console.log("USER ", user);
+    }, [token, user]);
+
     return (
         <>
             <header>
@@ -31,16 +39,16 @@ const App = () => {
                 <Account />
             </Route>
 
-            <Route path="/account/register">
-                <Register />
+            <Route path="/users/register">
+                {/* <Register /> */}
             </Route>
 
-            <Route path="/account/login">
-                <Login />
+            <Route path="/users/login">
+                {/* <Login /> */}
             </Route>
 
             <Route path="/posts">
-                <Posts />
+                <Posts token={token}/>
             </Route>
         </>
     )
