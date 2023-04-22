@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { useParams, useHistory } from 'react-router-dom';
 import { fetchFromAPI } from "../api";
-import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 const Account = ({ setToken, setUser }) => {
     const params = useParams();
