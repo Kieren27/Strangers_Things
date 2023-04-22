@@ -24,12 +24,12 @@ const App = () => {
 
                 <nav>
                     <Link to="/">Home</Link>
+                    <Link to="/posts">Posts</Link>
                     {
                         token
                             ? <Link to="users/me">My Profile</Link>
                             : <Link to="users/login">Login</Link>
                     }
-                    <Link to="/posts">Posts</Link>
                 </nav>
 
             </header>
@@ -38,8 +38,8 @@ const App = () => {
                 <Home />
             </Route>
 
-            <Route path="/account">
-                
+            <Route path="users/me">
+                {/* <Profile /> */}
             </Route>
 
             <Route path="/users/register">
