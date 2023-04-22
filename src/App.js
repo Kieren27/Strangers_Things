@@ -3,8 +3,8 @@ import { Route, Link } from "react-router-dom";
 
 import {
     Home,
-    // Account,
-    // Posts
+    Account,
+    Posts
 } from './components';
 
 const App = () => {
@@ -26,11 +26,11 @@ const App = () => {
             </Route>
 
             <Route path="/account">
-                {/* <Account /> */}
+                <Account />
             </Route>
 
             <Route path="/posts">
-                {/* <Posts /> */}
+                <Posts />
             </Route>
         </>
     )
