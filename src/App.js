@@ -4,7 +4,9 @@ import { Route, Link } from "react-router-dom";
 import {
     Home,
     Account,
-    Posts
+    Posts,
+    // Register,
+    // Login
 } from './components';
 
 const App = () => {
@@ -27,6 +29,14 @@ const App = () => {
 
             <Route path="/account">
                 <Account />
+            </Route>
+
+            <Route path="/account/register">
+                <Register />
+            </Route>
+
+            <Route path="/account/login">
+                <Login />
             </Route>
 
             <Route path="/posts">
