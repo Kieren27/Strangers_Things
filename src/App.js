@@ -4,8 +4,7 @@ import { Route, Link } from "react-router-dom";
 import {
     Home,
     Posts,
-    // Register,
-    // Login,
+    // Account,
     // Profile,
 } from './components';
 
@@ -43,12 +42,11 @@ const App = () => {
                 {/* <Profile /> */}
             </Route>
 
-            <Route path="/users/register">
-                {/* <Register /> */}
-            </Route>
-
-            <Route path="/users/login">
-                {/* <Login /> */}
+            <Route path="/users/:actionType">
+                <Account 
+                    setToken={setToken}
+                    setUser={setUser}
+                />
             </Route>
 
             <Route path="/posts">
