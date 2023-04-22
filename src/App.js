@@ -38,7 +38,7 @@ const App = () => {
                 <Home />
             </Route>
 
-            <Route path="users/me">
+            <Route exact path="/profile">
                 {/* <Profile /> */}
             </Route>
 
