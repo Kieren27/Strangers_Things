@@ -4,7 +4,7 @@ import { Route, Link } from "react-router-dom";
 import {
     Home,
     Posts,
-    // Account,
+    Account,
     // Profile,
 } from './components';
 
