@@ -15,7 +15,38 @@ const Account = ({ setToken, setUser }) => {
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (event) => {
+        event.preventDefault();
 
+        const requestBody = {
+            user: {
+                username,
+                password
+            }
+        }
+
+        const data = await fetchFromAPI({
+            endpoint: actionType,
+            method: "post",
+            body: requestBody,
+        })
+        console.log(data);
+
+        const { token } = data;
+        if (token) {
+            const data = await fetchFromAPI({
+                endpoint: 'user',
+                token,
+            })
+            const user = data?.user;
+            if (user) {
+                setUsername('');
+                setPassword('');
+                setToken(token);
+                setUser(user);
+
+                history.push('/');
+            }
+        }
     }
 
     return (
@@ -33,7 +64,7 @@ const Account = ({ setToken, setUser }) => {
                 </div>
                 <div>
                     <label htmlFor="password">Password</label>
-                    <input 
+                    <input
                         name="password"
                         type="text"
                         value={password}
