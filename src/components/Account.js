@@ -50,7 +50,7 @@ const Account = ({ setToken, setUser }) => {
 
     return (
         <>
-            <h1>{actionType === "register" ? "Sign Up" : "Login"}</h1>
+            <h1 className="page-title">{actionType === "register" ? "Sign Up" : "Login"}</h1>
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="username">Username</label>
