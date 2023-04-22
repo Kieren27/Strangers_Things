@@ -3,7 +3,6 @@ import { Route, Link } from "react-router-dom";
 
 import {
     Home,
-    Account,
     Posts,
     // Register,
     // Login
@@ -25,7 +24,7 @@ const App = () => {
 
                 <nav>
                     <Link to="/">Home</Link>
-                    <Link to="/account">Account</Link>
+                    <Link to="/users">Users (Login/Register)</Link>
                     <Link to="/posts">Posts</Link>
                 </nav>
 
@@ -36,7 +35,7 @@ const App = () => {
             </Route>
 
             <Route path="/account">
-                <Account />
+                
             </Route>
 
             <Route path="/users/register">
