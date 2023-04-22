@@ -15,7 +15,7 @@ const Account = ({ setToken, setUser }) => {
     const [password, setPassword] = useState("");
 
     const handleSubmit = async (event) => {
-        
+
     }
 
     return (
@@ -49,3 +49,5 @@ const Account = ({ setToken, setUser }) => {
         </>
     )
 }
+
+export default Account;
