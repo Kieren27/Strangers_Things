@@ -27,12 +27,11 @@ const Posts = ({token}) => {
                 {
                     posts 
                     ? posts.map(
-                        ({_id, isAuthor, author, location, desription, price, title}, idx) => (
+                        ({_id, isAuthor, author, location, price, title}, idx) => (
                             <div className="posts" key={_id ?? idx}>
                                 <h5>{title}</h5>
                                 <h5>{location}</h5>
                                 <h5>{price}</h5>
-                                <p>{desription}</p>
                                 {isAuthor
                                     ? <small>Created By You</small>
                                     : <small>Created By {author.username}</small>}
