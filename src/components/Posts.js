@@ -30,8 +30,8 @@ const Posts = ({token}) => {
                         ({_id, isAuthor, author, location, desription, price, title}, idx) => (
                             <div className="posts" key={_id ?? idx}>
                                 <h5>{title}</h5>
-                                <h5>{price}</h5>
                                 <h5>{location}</h5>
+                                <h5>{price}</h5>
                                 <p>{desription}</p>
                                 {isAuthor
                                     ? <small>Created By You</small>
