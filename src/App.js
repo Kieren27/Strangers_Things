@@ -2,10 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Route, Link } from "react-router-dom";
 
 import {
-    Home,
     Posts,
     Account,
-    // Profile,
+    Profile,
 } from './components';
 
 const App = () => {
@@ -35,11 +34,15 @@ const App = () => {
             </header>
 
             <Route exact path="/">
-                <Home />
+                <h1 className="page-title">Welcome to Stranger's Things!</h1>
+                {token && <p>You are currently logged in as: {user}</p>}
             </Route>
 
             <Route exact path="/profile">
-                {/* <Profile /> */}
+                <Profile 
+                    token={token}
+                    user={user}
+                />
             </Route>
 
             <Route path="/users/:actionType">
