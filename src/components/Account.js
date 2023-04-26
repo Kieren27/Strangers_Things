@@ -34,14 +34,17 @@ const Account = ({ setToken, setUser }) => {
         if (token) {
             const data = await fetchFromAPI({
                 endpoint: 'user',
-                token,
+                token
             })
-            const user = data?.user;
-            if (user) {
+            console.log(data);
+            const user = data?.username;
+            if (token) {
                 setUsername('');
                 setPassword('');
                 setToken(token);
+                console.log("token has been set");
                 setUser(user);
+                console.log("user has been set");
 
                 history.push('/');
             }
