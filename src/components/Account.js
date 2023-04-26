@@ -37,7 +37,7 @@ const Account = ({ setToken, setUser }) => {
                 token
             })
             console.log(data);
-            const user = data?.username;
+            const user = data;
             if (token) {
                 setUsername('');
                 setPassword('');
