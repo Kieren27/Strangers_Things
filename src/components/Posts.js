@@ -34,6 +34,7 @@ const Posts = ({ token }) => {
                 : <h3 className="hint-msg">To create a post, login or register.</h3>
 
             }
+            
             <div>
                 {
                     posts
