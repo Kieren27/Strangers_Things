@@ -5,6 +5,7 @@ import {
     Posts,
     Account,
     Profile,
+    // PostForm,
 } from './components';
 
 const App = () => {
@@ -54,6 +55,10 @@ const App = () => {
 
             <Route path="/posts">
                 <Posts token={token}/>
+            </Route>
+
+            <Route path="/newpost">
+                {/* <PostForm/> */}
             </Route>
         </>
     )
