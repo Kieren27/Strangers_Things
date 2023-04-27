@@ -9,23 +9,24 @@ const PostForm = ({ token }) => {
     const [location, setLocation] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
-    const [willDeliver, setWilldeliver] = useState('');
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const postData = await fetchFromAPI({
-            endpoint: "post",
-            token,
-            body : {
-                post : {
-                    title,
-                    description,
-                    price,
-                    location,
-                    willDeliver
-                }
+        const requestBody = {
+            post : {
+                title,
+                description,
+                price,
+                location,
             }
+        }
+
+        const postData = await fetchFromAPI({
+            endpoint: "posts",
+            method: "post",
+            token,
+            body : requestBody,
         })
         console.log(postData);
         
@@ -35,7 +36,6 @@ const PostForm = ({ token }) => {
             setLocation('');
             setPrice('');
             setDescription('');
-            setWilldeliver(false);
 
             history.push('/posts');
         }
@@ -82,15 +82,7 @@ const PostForm = ({ token }) => {
                         onChange={event => setDescription(event.target.value)}
                     />
                 </div>
-                <div>
-                    <label htmlFor="willDeliver">Will deliver</label>
-                    <input
-                        name="willDeliver"
-                        type="checkbox"
-                        value={willDeliver}
-                        onChange={event => setWilldeliver(event.target.value)}
-                    />
-                </div>
+                <button type="submit">Post</button>
             </form>
         </>
     )

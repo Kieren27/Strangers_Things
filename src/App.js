@@ -5,7 +5,7 @@ import {
     Posts,
     Account,
     Profile,
-    // PostForm,
+    PostForm,
 } from './components';
 
 const App = () => {
@@ -58,7 +58,7 @@ const App = () => {
             </Route>
 
             <Route path="/newpost">
-                {/* <PostForm token={token}/> */}
+                <PostForm token={token}/>
             </Route>
         </>
     )
