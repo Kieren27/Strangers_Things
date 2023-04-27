@@ -1,8 +1,10 @@
 import React, { useState } from "react";
-import { BrowserHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { fetchFromAPI } from "../api";
 
 const PostForm = ({ token }) => {
+    const history = useHistory();
+
     const [title, setTitle] = useState('');
     const [location, setLocation] = useState('');
     const [price, setPrice] = useState('');
@@ -33,6 +35,8 @@ const PostForm = ({ token }) => {
             setPrice('');
             setDescription('');
             setWilldeliver(false);
+
+            history.push('/posts');
         }
 
     }
