@@ -11,7 +11,7 @@ const PostForm = ({ token }) => {
     const [description, setDescription] = useState('');
     const [willDeliver, setWilldeliver] = useState('');
 
-    const createPost = async (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
 
         const postData = await fetchFromAPI({
@@ -28,6 +28,7 @@ const PostForm = ({ token }) => {
             }
         })
         console.log(postData);
+        
         const { post } = postData;
         if (post) {
             setTitle('');
@@ -40,6 +41,59 @@ const PostForm = ({ token }) => {
         }
 
     }
+
+    return (
+        <>
+            <h1 className="page-title">Create New Post</h1>
+            <form onSubmit={handleSubmit}>
+                <div>
+                    <label htmlFor="title">Title</label>
+                    <input
+                        name="title"
+                        type="text"
+                        value={title}
+                        onChange={event => setTitle(event.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="location">Location</label>
+                    <input
+                        name="location"
+                        type="text"
+                        value={location}
+                        onChange={event => setLocation(event.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="price">Price</label>
+                    <input
+                        name="price"
+                        type="text"
+                        value={price}
+                        onChange={event => setPrice(event.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="description">Description</label>
+                    <input
+                        name="description"
+                        type="text"
+                        value={description}
+                        onChange={event => setDescription(event.target.value)}
+                    />
+                </div>
+                <div>
+                    <label htmlFor="willDeliver">Will deliver</label>
+                    <input
+                        name="willDeliver"
+                        type="checkbox"
+                        value={willDeliver}
+                        onChange={event => setWilldeliver(event.target.value)}
+                    />
+                </div>
+            </form>
+        </>
+    )
 
 }
 
