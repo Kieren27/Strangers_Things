@@ -58,7 +58,7 @@ const App = () => {
             </Route>
 
             <Route path="/newpost">
-                {/* <PostForm/> */}
+                {/* <PostForm token={token}/> */}
             </Route>
         </>
     )
