@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { fetchFromAPI } from "../api";
 
 const Posts = ({token}) => {
@@ -23,6 +24,11 @@ const Posts = ({token}) => {
     return (
         <>
             <h1 className="page-title">Posts</h1>
+            <div className="create-button">
+                <button>
+                    <Link to="/newpost" className="link">Create Post</Link>
+                </button>
+            </div>
             <div>
                 {
                     posts 
