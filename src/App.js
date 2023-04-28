@@ -1,21 +1,38 @@
 import React, { useEffect, useState } from "react";
 import { Route, Link } from "react-router-dom";
+import { fetchFromAPI } from "./api";
 
 import {
     Posts,
     Account,
     Profile,
     PostForm,
+    PostPage,
 } from './components';
 
 const App = () => {
     const [token, setToken] = useState(null);
     const [user, setUser] = useState(null);
+    const [posts, setPosts] = useState([]);
 
-    useEffect (() => {
+    const fetchPosts = async () => {
+        console.log('FETCH ALL POSTS');
+        const data = await fetchFromAPI({
+            endpoint: "posts",
+            token
+        })
+
+        if (data?.posts) {
+            setPosts(data.posts);
+        }
+    }
+
+    useEffect(() => {
         console.log("TOKEN: " + token);
-        console.log("USER ", user);
-    }, [token, user]);
+        console.log("USER: ", user);
+        console.log("POSTS: ", posts);
+        fetchPosts();
+    }, [token]);
 
     return (
         <>
@@ -53,12 +70,23 @@ const App = () => {
                 />
             </Route>
 
-            <Route path="/posts">
-                <Posts token={token}/>
+            <Route exact path="/posts">
+                { posts
+                    ? <Posts 
+                    token={token}
+                    posts={posts}
+                    />
+                    : <strong>No Posts are available</strong>
+                }
+            </Route>
+            <Route path="/posts/:POST_ID">
+                <PostPage posts={posts}/>
             </Route>
 
             <Route path="/newpost">
-                <PostForm token={token}/>
+                <PostForm 
+                token={token}
+                fetchPosts={fetchPosts}/>
             </Route>
         </>
     )

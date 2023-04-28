@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import { fetchFromAPI } from "../api";
 
-const PostForm = ({ token }) => {
+const PostForm = ({ fetchPosts, token }) => {
     const history = useHistory();
 
     const [title, setTitle] = useState('');
@@ -14,7 +14,7 @@ const PostForm = ({ token }) => {
         event.preventDefault();
 
         const requestBody = {
-            post : {
+            post: {
                 title,
                 description,
                 price,
@@ -26,16 +26,17 @@ const PostForm = ({ token }) => {
             endpoint: "posts",
             method: "post",
             token,
-            body : requestBody,
+            body: requestBody,
         })
         console.log(postData);
-        
+
         const { post } = postData;
         if (post) {
             setTitle('');
             setLocation('');
             setPrice('');
             setDescription('');
+            await fetchPosts();
 
             history.push('/posts');
         }
@@ -45,46 +46,46 @@ const PostForm = ({ token }) => {
     return (
         <>
             <h1 className="page-title">Create New Post</h1>
-            { token 
-                ?             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="title">Title</label>
-                    <input
-                        name="title"
-                        type="text"
-                        value={title}
-                        onChange={event => setTitle(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="location">Location</label>
-                    <input
-                        name="location"
-                        type="text"
-                        value={location}
-                        onChange={event => setLocation(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="price">Price</label>
-                    <input
-                        name="price"
-                        type="text"
-                        value={price}
-                        onChange={event => setPrice(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="description">Description</label>
-                    <input
-                        name="description"
-                        type="text"
-                        value={description}
-                        onChange={event => setDescription(event.target.value)}
-                    />
-                </div>
-                <button type="submit">Post</button>
-            </form>
+            {token
+                ? <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="title">Title</label>
+                        <input
+                            name="title"
+                            type="text"
+                            value={title}
+                            onChange={event => setTitle(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="location">Location</label>
+                        <input
+                            name="location"
+                            type="text"
+                            value={location}
+                            onChange={event => setLocation(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="price">Price</label>
+                        <input
+                            name="price"
+                            type="text"
+                            value={price}
+                            onChange={event => setPrice(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="description">Description</label>
+                        <input
+                            name="description"
+                            type="text"
+                            value={description}
+                            onChange={event => setDescription(event.target.value)}
+                        />
+                    </div>
+                    <button type="submit">Post</button>
+                </form>
                 : <p className="hint-msg">please log in or register to create a new post.</p>
             }
         </>
