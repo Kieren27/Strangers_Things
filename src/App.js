@@ -36,7 +36,7 @@ const App = () => {
 
             <Route exact path="/">
                 <h1 className="page-title">Welcome to Stranger's Things!</h1>
-                {token && <p>You are currently logged in as: {user.username}</p>}
+                {token && <p className="hint-msg">You are currently logged in as: {user.username}</p>}
             </Route>
 
             <Route exact path="/profile">
