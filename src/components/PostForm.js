@@ -45,7 +45,8 @@ const PostForm = ({ token }) => {
     return (
         <>
             <h1 className="page-title">Create New Post</h1>
-            <form onSubmit={handleSubmit}>
+            { token 
+                ?             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="title">Title</label>
                     <input
@@ -84,6 +85,8 @@ const PostForm = ({ token }) => {
                 </div>
                 <button type="submit">Post</button>
             </form>
+                : <p className="hint-msg">please log in or register to create a new post.</p>
+            }
         </>
     )
 
