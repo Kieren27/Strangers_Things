@@ -49,16 +49,23 @@
             margin-bottom: 20px;
         }
 
+        #post-div {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         .posts {
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
             align-items: center;
             border: solid black;
             font-size: 30px;
             margin-bottom: 20px;
             border-radius: 0.5rem;
             background-color: #A5D7E8;
+            width: 50%;
         }
 
         .posts * {
@@ -116,6 +123,34 @@
             display: flex;
             justify-content: center;
             margin: 10px;
+        }
+
+        #profile-el {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 100vw;
+            justify-content: space-around;
+            margin-bottom: 30px;
+            overflow-x: hidden;
+        }
+
+        #active-posts {
+            display: flex;
+            width: 30%;
+            justify-content: center;
+        }
+
+        #inactive-posts {
+            display: flex;
+            width: 30%;
+            justify-content: center;
+        }
+
+        #messages {
+            display: flex;
+            width: 30%;
+            justify-content: center;
         }
     </style>
 </head>
