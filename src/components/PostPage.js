@@ -27,7 +27,7 @@ const PostPage = ({ posts, token, fetchPosts }) => {
     return (
        <>
         <PostDetails posts={post} token={token} onDelete={onDelete}/>
-        <CommentForm posts={post} token={token} fetchPosts={fetchPosts}/>
+        <CommentForm token={token} POST_ID={post._id}/>
        </>
     )
 }
