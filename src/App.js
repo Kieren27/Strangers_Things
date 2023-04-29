@@ -18,7 +18,7 @@ const App = () => {
     const fetchPosts = async () => {
         console.log('FETCH ALL POSTS');
         const data = await fetchFromAPI({
-            endpoint: "posts",
+            path: "/posts",
             token
         })
 

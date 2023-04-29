@@ -23,7 +23,7 @@ const PostForm = ({ fetchPosts, token }) => {
         }
 
         const postData = await fetchFromAPI({
-            endpoint: "posts",
+            path: "/posts",
             method: "post",
             token,
             body: requestBody,

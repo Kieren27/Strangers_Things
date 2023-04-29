@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import PostDetails from "./PostDetails";
+import CommentForm from "./CommentForm";
 
 const PostPage = ({ posts, token, fetchPosts }) => {
     const params = useParams();
@@ -24,7 +25,10 @@ const PostPage = ({ posts, token, fetchPosts }) => {
     }
 
     return (
+       <>
         <PostDetails posts={post} token={token} onDelete={onDelete}/>
+        <CommentForm posts={post} token={token} fetchPosts={fetchPosts}/>
+       </>
     )
 }
 

@@ -10,8 +10,7 @@ const PostDetails = ({
 
     const deletePost = async () => {
        await fetchFromAPI({
-        endpoint: "posts", 
-        POST_ID: _id,
+        path: `/posts/${_id}`,
         method: 'delete',
         token
        });

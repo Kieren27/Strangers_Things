@@ -24,7 +24,7 @@ const Account = ({ setToken, setUser }) => {
         }
 
         const data = await fetchFromAPI({
-            endpoint: actionType,
+            path: `/users/${actionType}`,
             method: "post",
             body: requestBody,
         })
@@ -33,7 +33,7 @@ const Account = ({ setToken, setUser }) => {
         const { token } = data;
         if (token) {
             const data = await fetchFromAPI({
-                endpoint: 'user',
+                path: "/users/me",
                 token
             })
             console.log(data);
