@@ -75,12 +75,16 @@ const App = () => {
                     ? <Posts 
                     token={token}
                     posts={posts}
+                    fetchPosts={fetchPosts}
                     />
                     : <strong>No Posts are available</strong>
                 }
             </Route>
             <Route path="/posts/:POST_ID">
-                <PostPage posts={posts}/>
+                <PostPage 
+                posts={posts}
+                token={token}
+                fetchPosts={fetchPosts}/>
             </Route>
 
             <Route path="/newpost">

@@ -1,9 +1,23 @@
 import React from "react";
+import { fetchFromAPI } from "../api";
 
 const PostDetails = ({
     posts: { _id, isAuthor, author, location, price, title, description },
-    children
+    children,
+    token,
+    onDelete
 }) => {
+
+    const deletePost = async () => {
+       await fetchFromAPI({
+        endpoint: "posts", 
+        POST_ID: _id,
+        method: 'delete',
+        token
+       });
+       onDelete && onDelete();
+    }
+
     return (
         <div className="posts" key={_id ?? idx}>
             <h5>{title}</h5>
@@ -13,6 +27,7 @@ const PostDetails = ({
             {isAuthor 
             ? <small>Created By You</small>
             : <small>Created by {author.username} </small>}
+            {isAuthor && <button onClick={deletePost}>Delete</button>}
             {children}
         </div>
     )

@@ -1,16 +1,22 @@
 import React from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useHistory } from "react-router-dom";
 import PostDetails from "./PostDetails";
 
-const PostPage = ({ posts }) => {
+const PostPage = ({ posts, token, fetchPosts }) => {
     const params = useParams();
+    const history = useHistory();
     const { POST_ID } = params;
 
     const post = posts.find(post => post._id == POST_ID);
 
+    const onDelete = async () => {
+        await fetchPosts();
+        history.push('/posts');
+    }
+
     if (!post) {
         return (
-            <div>
+            <div className="hint-msg">
                 No Post Found with that ID
                 <Link to="/posts">Back to Posts</Link>
             </div>
@@ -18,7 +24,7 @@ const PostPage = ({ posts }) => {
     }
 
     return (
-        <PostDetails posts={post}/>
+        <PostDetails posts={post} token={token} onDelete={onDelete}/>
     )
 }
 

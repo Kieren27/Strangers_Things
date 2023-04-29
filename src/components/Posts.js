@@ -4,6 +4,10 @@ import PostDetails from "./PostDetails";
 
 const Posts = ({ posts, fetchPosts, token }) => {
 
+    const onDelete = async () => {
+        await fetchPosts();
+    }
+
     return (
         <>
             <h1 className="page-title">Posts</h1>
@@ -23,8 +27,12 @@ const Posts = ({ posts, fetchPosts, token }) => {
                     (posts, idx) => (
                         <PostDetails 
                         key={posts._id ?? idx}
-                        posts={posts}>
-                        <Link to={`/posts/${posts._id}`}>See Details</Link>
+                        posts={posts}
+                        token={token}
+                        onDelete={onDelete}>
+                        <button>
+                            <Link to={`/posts/${posts._id}`} className="link">See Details</Link>
+                        </button>
                         </PostDetails>
                     )
                 )}
