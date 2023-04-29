@@ -45,7 +45,7 @@ const App = () => {
                     {
                         token
                             ? <Link to="/profile">Profile</Link>
-                            : <Link to="users/login">Login</Link>
+                            : <Link to="/users/login">Login</Link>
                     }
                 </nav>
 
