@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 const Profile = ({user, token}) => {
     const history = useHistory();
 
-    if (!user) {
+    if (!token) {
         history.push('/users/login')
     }
 
