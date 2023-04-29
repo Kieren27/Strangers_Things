@@ -40,7 +40,7 @@ const CommentForm = ({POST_ID, token}) => {
                     </div>
                     <button type="submit">Send</button>
                 </form>
-                : <Link to="/users/login" className="hint-msg">please log in or register to send a message.</Link>}
+                : <Link to="/users/login" className="hint-msg">please login or register to send a message.</Link>}
         </>
     )
 }
