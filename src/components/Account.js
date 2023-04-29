@@ -75,8 +75,8 @@ const Account = ({ setToken, setUser }) => {
                 </div>
                 <button type="submit">{actionType === "register" ? "Register" : "Login"}</button>
                 {actionType === "register"
-                    ? <Link to="users/login">Already have an account? Log in here.</Link>
-                    : <Link to="users/register">Don't have an account? Register here.</Link>
+                    ? <Link to="/users/login">Already have an account? Log in here.</Link>
+                    : <Link to="/users/register">Don't have an account? Register here.</Link>
                 }
             </form>
         </>
