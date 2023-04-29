@@ -22,7 +22,7 @@ const Posts = ({ posts, fetchPosts, token }) => {
 
             }
 
-            <div>
+            <div id="post-div">
                 {posts.map(
                     (posts, idx) => (
                         <PostDetails 
