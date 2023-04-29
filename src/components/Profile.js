@@ -2,7 +2,12 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 
-const Profile = ({user, token}) => {
+const Profile = ({user: {
+    username,
+    messages,
+    posts,
+}, 
+token}) => {
     const history = useHistory();
 
     if (!token) {
@@ -11,7 +16,7 @@ const Profile = ({user, token}) => {
 
     return (
         <>
-            <h1 className="page-title">{user.username}'s profile</h1>
+            <h1 className="page-title">{username}'s profile</h1>
         </>
     )
 }
