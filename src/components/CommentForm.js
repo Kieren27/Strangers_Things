@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import { fetchFromAPI } from "../api";
 
 const CommentForm = ({POST_ID, token}) => {
@@ -39,7 +40,7 @@ const CommentForm = ({POST_ID, token}) => {
                     </div>
                     <button type="submit">Send</button>
                 </form>
-                : <p className="hint-msg">please log in or register to send a message.</p>}
+                : <Link to="/users/login" className="hint-msg">please log in or register to send a message.</Link>}
         </>
     )
 }
