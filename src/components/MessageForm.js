@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { fetchFromAPI } from "../api";
 
-const MessageForm = ({POST_ID, token}) => {
+const MessageForm = ({ posts, POST_ID, token }) => {
     const [content, setContent] = useState('');
 
     const handleSubmit = async (event) => {
@@ -12,9 +12,9 @@ const MessageForm = ({POST_ID, token}) => {
             path: `/posts/${POST_ID}/messages`,
             method: "post",
             body: {
-               message: {
-                content,
-               } 
+                message: {
+                    content,
+                }
             },
             token,
         })
@@ -28,7 +28,7 @@ const MessageForm = ({POST_ID, token}) => {
     return (
         <>
             {token
-                ? <form onSubmit={handleSubmit}>
+                ? !posts.isAuthor && <form onSubmit={handleSubmit}>
                     <div>
                         <label htmlFor="content">Send a message to the author:</label>
                         <input
