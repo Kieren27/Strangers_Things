@@ -2,7 +2,7 @@ import React from "react";
 import { fetchFromAPI } from "../api";
 
 const PostDetails = ({
-    posts: { _id, isAuthor, author, location, price, title, description },
+    posts: { _id, isAuthor, author, location, price, title, description, willDeliver },
     children,
     token,
     onDelete
@@ -19,10 +19,11 @@ const PostDetails = ({
 
     return (
         <div className="posts" key={_id ?? idx}>
-            <h5>{title}</h5>
-            <h5>Location: {location}</h5>
-            <h5>Price: {price}</h5>
-            <h5>Description: {description}</h5>
+            <h4>{title}</h4>
+            <h4>Location: {location}</h4>
+            <h4>Will Deliver: {willDeliver ? "Yes" : "No"}</h4>
+            <h4>Price: {price}</h4>
+            <h4>Description: {description}</h4>
             {isAuthor
                 ?
                 <>
