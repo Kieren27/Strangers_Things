@@ -16,7 +16,6 @@ const App = () => {
     const [posts, setPosts] = useState([]);
 
     const fetchPosts = async () => {
-        console.log('FETCH ALL POSTS');
         const data = await fetchFromAPI({
             path: "/posts",
             token
