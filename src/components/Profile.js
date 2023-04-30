@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 import ProfilePosts from "./ProfilePosts";
+import ProfileMessages from "./ProfileMessages";
 
 
 const Profile = ({ user: {
@@ -25,8 +26,20 @@ const Profile = ({ user: {
                     {posts.map(
                         (posts, idx) => (
                             <ProfilePosts
-                            key={posts._id ?? idx}
-                            posts={posts}
+                                key={posts._id ?? idx}
+                                posts={posts}
+                            />
+                        )
+                    )}
+                </section>
+
+                <section id="my-messages">
+                    <h1>Messages</h1>
+                    {messages.map(
+                        (messages, idx) => (
+                            <ProfileMessages
+                                key={messages._id ?? idx}
+                                messages={messages}
                             />
                         )
                     )}
