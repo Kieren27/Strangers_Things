@@ -28,8 +28,8 @@ const PostPage = ({ posts, token, fetchPosts }) => {
        <>
         <div id="post-div">
             <PostDetails posts={post} token={token} onDelete={onDelete}/>
+            <MessageForm token={token} POST_ID={post._id}/>
         </div>
-        <MessageForm token={token} POST_ID={post._id}/>
        </>
     )
 }
