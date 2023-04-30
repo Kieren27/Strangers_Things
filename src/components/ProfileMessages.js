@@ -4,7 +4,7 @@ const ProfileMessages = ({messages}) => {
     return (
         <div key={messages._id ?? idx}>
             <p>From: {messages.fromUser.username}</p>
-            <p>On: {messages.post.title}</p>
+            <p id="message-title">On: {messages.post.title}</p>
             <p>{messages.content}</p>
         </div>
     )
