@@ -54,31 +54,33 @@ const Account = ({ setToken, setUser }) => {
     return (
         <>
             <h1 className="page-title">{actionType === "register" ? "Sign Up" : "Login"}</h1>
-            <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="username">Username:</label>
-                    <input
-                        name="username"
-                        type="text"
-                        value={username}
-                        onChange={event => setUsername(event.target.value)}
-                    />
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input
-                        name="password"
-                        type="password"
-                        value={password}
-                        onChange={event => setPassword(event.target.value)}
-                    />
-                </div>
-                <button type="submit">{actionType === "register" ? "Register" : "Login"}</button>
-                {actionType === "register"
-                    ? <Link to="/users/login">Already have an account? Log in here.</Link>
-                    : <Link to="/users/register">Don't have an account? Register here.</Link>
-                }
-            </form>
+            <div className="login-form">
+                <form onSubmit={handleSubmit}>
+                    <div>
+                        <label htmlFor="username">Username:</label>
+                        <input
+                            name="username"
+                            type="text"
+                            value={username}
+                            onChange={event => setUsername(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <input
+                            name="password"
+                            type="password"
+                            value={password}
+                            onChange={event => setPassword(event.target.value)}
+                        />
+                    </div>
+                    <button type="submit">{actionType === "register" ? "Register" : "Login"}</button>
+                    {actionType === "register"
+                        ? <Link to="/users/login">Already have an account? Log in here.</Link>
+                        : <Link to="/users/register">Don't have an account? Register here.</Link>
+                    }
+                </form>
+            </div>
         </>
     )
 }
