@@ -17,20 +17,22 @@ const PostPage = ({ posts, token, fetchPosts }) => {
 
     if (!post) {
         return (
-            <div className="hint-msg">
-                No Post Found with that ID
-                <Link to="/posts" className="link">Back to Posts</Link>
-            </div>
+            <>
+                <div className="hint-msg">
+                    No Post Found with that ID
+                </div>
+                <Link to="/posts" className="hint-msg">Back to Posts</Link>
+            </>
         );
     }
 
     return (
-       <>
-        <div id="post-div">
-            <PostDetails posts={post} token={token} onDelete={onDelete}/>
-            <MessageForm token={token} POST_ID={post._id} posts={posts}/>
-        </div>
-       </>
+        <>
+            <div id="post-div">
+                <PostDetails posts={post} token={token} onDelete={onDelete} />
+                <MessageForm token={token} POST_ID={post._id} posts={posts} />
+            </div>
+        </>
     )
 }
 
