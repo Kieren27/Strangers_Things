@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
+import ProfilePosts from "./ProfilePosts";
 
 
 const Profile = ({ user: {
@@ -8,6 +9,7 @@ const Profile = ({ user: {
     posts,
 },
     token }) => {
+
     const history = useHistory();
 
     if (!token) {
@@ -18,16 +20,16 @@ const Profile = ({ user: {
         <>
             <h1 className="page-title">{username}'s profile</h1>
             <div id="profile-el">
-                <section id="active-posts">
-                    <h1>Active Posts</h1>
-                </section>
-
-                <section id="messages">
-                    <h1>messages</h1>
-                </section>
-
-                <section id="inactive-posts">
-                    <h1>Inactive Posts</h1>
+                <section id="my-posts">
+                    <h1>My Posts</h1>
+                    {posts.map(
+                        (posts, idx) => (
+                            <ProfilePosts
+                            key={posts._id ?? idx}
+                            posts={posts}
+                            />
+                        )
+                    )}
                 </section>
             </div>
         </>
