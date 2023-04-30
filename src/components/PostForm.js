@@ -50,54 +50,56 @@ const PostForm = ({ fetchPosts, token }) => {
         <>
             <h1 className="page-title">Create New Post</h1>
             {token
-                ? <form onSubmit={handleSubmit}>
-                    <div>
-                        <label htmlFor="title">Title</label>
-                        <input
-                            name="title"
-                            type="text"
-                            value={title}
-                            onChange={event => setTitle(event.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="location">Location</label>
-                        <input
-                            name="location"
-                            type="text"
-                            value={location}
-                            onChange={event => setLocation(event.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="price">Price</label>
-                        <input
-                            name="price"
-                            type="text"
-                            value={price}
-                            onChange={event => setPrice(event.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="description">Description</label>
-                        <input
-                            name="description"
-                            type="text"
-                            value={description}
-                            onChange={event => setDescription(event.target.value)}
-                        />
-                    </div>
-                    <div>
-                        <label htmlFor="willDeliver">Will Deliver</label>
-                        <input
-                            name="willDeliver"
-                            type="checkbox"
-                            checked={willDeliver}
-                            onChange={event => setWillDeliver(event.target.checked)}
-                        />
-                    </div>
-                    <button type="submit">Post</button>
-                </form>
+                ? <div className="post-form">
+                    <form onSubmit={handleSubmit}>
+                        <div>
+                            <label htmlFor="title">Title:</label>
+                            <input
+                                name="title"
+                                type="text"
+                                value={title}
+                                onChange={event => setTitle(event.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="location">Location:</label>
+                            <input
+                                name="location"
+                                type="text"
+                                value={location}
+                                onChange={event => setLocation(event.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="price">Price:</label>
+                            <input
+                                name="price"
+                                type="text"
+                                value={price}
+                                onChange={event => setPrice(event.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="description">Description:</label>
+                            <input
+                                name="description"
+                                type="text"
+                                value={description}
+                                onChange={event => setDescription(event.target.value)}
+                            />
+                        </div>
+                        <div>
+                            <label htmlFor="willDeliver">Will Deliver:</label>
+                            <input
+                                name="willDeliver"
+                                type="checkbox"
+                                checked={willDeliver}
+                                onChange={event => setWillDeliver(event.target.checked)}
+                            />
+                        </div>
+                        <button type="submit">Post</button>
+                    </form>
+                </div>
                 : <p className="hint-msg">please log in or register to create a new post.</p>
             }
         </>
