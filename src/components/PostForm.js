@@ -30,7 +30,6 @@ const PostForm = ({ fetchPosts, token }) => {
             token,
             body: requestBody,
         })
-        console.log(postData);
 
         const { post } = postData;
         if (post) {

@@ -6,7 +6,6 @@ import { fetchFromAPI } from "../api";
 const Account = ({ setToken, setUser }) => {
     const params = useParams();
     const history = useHistory();
-    console.log(params);
 
     const { actionType } = params;
 
@@ -28,7 +27,6 @@ const Account = ({ setToken, setUser }) => {
             method: "post",
             body: requestBody,
         })
-        console.log(data);
 
         const { token } = data;
         if (token) {
@@ -36,15 +34,13 @@ const Account = ({ setToken, setUser }) => {
                 path: "/users/me",
                 token
             })
-            console.log(data);
+
             const user = data;
             if (token) {
                 setUsername('');
                 setPassword('');
                 setToken(token);
-                console.log("token has been set");
                 setUser(user);
-                console.log("user has been set");
 
                 history.push('/');
             }

@@ -18,7 +18,6 @@ const MessageForm = ({ posts, POST_ID, token }) => {
             },
             token,
         })
-        console.log(messageData);
 
         if (messageData.message) {
             setContent('');

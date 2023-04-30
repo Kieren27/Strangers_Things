@@ -28,9 +28,6 @@ const App = () => {
     }
 
     useEffect(() => {
-        console.log("TOKEN: " + token);
-        console.log("USER: ", user);
-        console.log("POSTS: ", posts);
         fetchPosts();
     }, [token]);
 
