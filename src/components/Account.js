@@ -61,6 +61,8 @@ const Account = ({ setToken, setUser }) => {
                         <input
                             name="username"
                             type="text"
+                            minLength="3"
+                            maxLength="10"
                             value={username}
                             onChange={event => setUsername(event.target.value)}
                         />
@@ -70,6 +72,8 @@ const Account = ({ setToken, setUser }) => {
                         <input
                             name="password"
                             type="password"
+                            minLength="3"
+                            maxLength="10"
                             value={password}
                             onChange={event => setPassword(event.target.value)}
                         />
