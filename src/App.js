@@ -34,6 +34,12 @@ const App = () => {
         fetchPosts();
     }, [token]);
 
+    const logout = () => {
+        setToken('');
+        setUser('');
+        fetchPosts();
+    }
+
     return (
         <>
             <header>
@@ -44,7 +50,11 @@ const App = () => {
                     <Link to="/posts">Posts</Link>
                     {
                         token
-                            ? <Link to="/profile">Profile</Link>
+                            ? <>
+                                <Link to="/profile">Profile</Link>
+                                <a href="#" onClick={logout}>Log Out</a>
+                            </>
+
                             : <Link to="/users/login">Login</Link>
                     }
                 </nav>
@@ -57,40 +67,40 @@ const App = () => {
             </Route>
 
             <Route exact path="/profile">
-                <Profile 
+                <Profile
                     token={token}
                     user={user}
                 />
             </Route>
 
             <Route path="/users/:actionType">
-                <Account 
+                <Account
                     setToken={setToken}
                     setUser={setUser}
                 />
             </Route>
 
             <Route exact path="/posts">
-                { posts
-                    ? <Posts 
-                    token={token}
-                    posts={posts}
-                    fetchPosts={fetchPosts}
+                {posts
+                    ? <Posts
+                        token={token}
+                        posts={posts}
+                        fetchPosts={fetchPosts}
                     />
                     : <strong>No Posts are available</strong>
                 }
             </Route>
             <Route path="/posts/:POST_ID">
-                <PostPage 
-                posts={posts}
-                token={token}
-                fetchPosts={fetchPosts}/>
+                <PostPage
+                    posts={posts}
+                    token={token}
+                    fetchPosts={fetchPosts} />
             </Route>
 
             <Route path="/newpost">
-                <PostForm 
-                token={token}
-                fetchPosts={fetchPosts}/>
+                <PostForm
+                    token={token}
+                    fetchPosts={fetchPosts} />
             </Route>
         </>
     )
