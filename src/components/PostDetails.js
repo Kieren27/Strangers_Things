@@ -9,12 +9,12 @@ const PostDetails = ({
 }) => {
 
     const deletePost = async () => {
-       await fetchFromAPI({
-        path: `/posts/${_id}`,
-        method: 'delete',
-        token
-       });
-       onDelete && onDelete();
+        await fetchFromAPI({
+            path: `/posts/${_id}`,
+            method: 'delete',
+            token
+        });
+        onDelete && onDelete();
     }
 
     return (
@@ -23,10 +23,13 @@ const PostDetails = ({
             <h5>Location: {location}</h5>
             <h5>Price: {price}</h5>
             <h5>Description: {description}</h5>
-            {isAuthor 
-            ? <small>Created By You</small>
-            : <small>Created by {author.username} </small>}
-            {isAuthor && <button onClick={deletePost}>Delete</button>}
+            {isAuthor
+                ?
+                <>
+                    <small>Created By You</small>
+                    <button onClick={deletePost}>Delete</button>
+                </>
+                : <small>Created by {author.username} </small>}
             {children}
         </div>
     )
