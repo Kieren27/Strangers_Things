@@ -19,11 +19,11 @@ const PostDetails = ({
 
     return (
         <div className="posts" key={_id ?? idx}>
-            <h4>{title}</h4>
-            <h4>Location: {location}</h4>
-            <h4>Will Deliver: {willDeliver ? "Yes" : "No"}</h4>
-            <h4>Price: {price}</h4>
-            <h4>Description: {description}</h4>
+            <p>{title}</p>
+            <p>Location: {location}</p>
+            <p>Will Deliver: {willDeliver ? "Yes" : "No"}</p>
+            <p>Price: {price}</p>
+            <p>Description: {description}</p>
             {isAuthor
                 ?
                 <>
