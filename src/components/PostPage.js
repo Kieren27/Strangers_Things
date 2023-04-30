@@ -19,7 +19,7 @@ const PostPage = ({ posts, token, fetchPosts }) => {
         return (
             <div className="hint-msg">
                 No Post Found with that ID
-                <Link to="/posts">Back to Posts</Link>
+                <Link to="/posts" className="link">Back to Posts</Link>
             </div>
         );
     }

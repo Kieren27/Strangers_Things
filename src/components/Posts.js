@@ -32,7 +32,7 @@ const Posts = ({ posts, fetchPosts, token }) => {
                     </button>
                 </div>
 
-                : <h3 className="hint-msg">To create a post, login or register</h3>
+                : <Link to="/users/login" className="hint-msg">To create a post, login or register</Link>
 
             }
 

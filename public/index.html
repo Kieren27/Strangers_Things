@@ -30,11 +30,17 @@
             width: 100vw;
             margin: 10px;
             margin-bottom: 30px;
+            overflow-x: hidden;
         }
 
         .nav-link {
             color: white;
             text-decoration: none;
+            font-size: 20px;
+        }
+
+        .nav-link:hover {
+            color: red;
         }
 
         .logo {
@@ -42,7 +48,8 @@
             justify-content: center;
             align-items: center;
             width: 100vw;
-            margin: 20px;
+            margin: 30px;
+            overflow-x: hidden;
         }
 
         #app {
@@ -84,12 +91,17 @@
             margin: 10px;
         }
 
+        .login-form {
+            display: flex;
+            justify-content: center;
+        }
+
         form {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            border: solid black;
+            background-color: #576CBC;
         }
 
         form * {
@@ -98,7 +110,6 @@
 
         form input {
             margin-left: 10px;
-            border: 1px solid black;
         }
 
         button {
@@ -115,6 +126,10 @@
             cursor: pointer;
         }
 
+        button:hover {
+            color: red;
+        }
+
         .create-button {
             display: flex;
             justify-content: center;
@@ -125,6 +140,7 @@
         .link {
             font-size: large;
             color: white;
+            text-decoration: none;
         }
 
         .link:hover {
@@ -135,6 +151,12 @@
             display: flex;
             justify-content: center;
             margin: 10px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .hint-msg:hover {
+            color: red;
         }
 
         #profile-el {
