@@ -56,7 +56,7 @@ const Account = ({ setToken, setUser }) => {
             <h1 className="page-title">{actionType === "register" ? "Sign Up" : "Login"}</h1>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="username">Username</label>
+                    <label htmlFor="username">Username:</label>
                     <input
                         name="username"
                         type="text"
@@ -65,7 +65,7 @@ const Account = ({ setToken, setUser }) => {
                     />
                 </div>
                 <div>
-                    <label htmlFor="password">Password</label>
+                    <label htmlFor="password">Password:</label>
                     <input
                         name="password"
                         type="password"
