@@ -46,16 +46,16 @@ const App = () => {
                 <h1 className="logo">Stranger's Things</h1>
 
                 <nav>
-                    <Link to="/">Home</Link>
-                    <Link to="/posts">Posts</Link>
+                    <Link to="/" className="nav-link">Home</Link>
+                    <Link to="/posts" className="nav-link">Posts</Link>
                     {
                         token
                             ? <>
-                                <Link to="/profile">Profile</Link>
-                                <a href="#" onClick={logout}>Log Out</a>
+                                <Link to="/profile" className="nav-link">Profile</Link>
+                                <a href="#" onClick={logout} className="nav-link">Log Out</a>
                             </>
 
-                            : <Link to="/users/login">Login</Link>
+                            : <Link to="/users/login" className="nav-link">Login</Link>
                     }
                 </nav>
 
