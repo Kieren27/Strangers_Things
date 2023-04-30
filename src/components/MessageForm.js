@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import { fetchFromAPI } from "../api";
 
-const CommentForm = ({POST_ID, token}) => {
+const MessageForm = ({POST_ID, token}) => {
     const [content, setContent] = useState('');
 
     const handleSubmit = async (event) => {
@@ -45,4 +45,4 @@ const CommentForm = ({POST_ID, token}) => {
     )
 }
 
-export default CommentForm;
+export default MessageForm;

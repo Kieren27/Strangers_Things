@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams, Link, useHistory } from "react-router-dom";
 import PostDetails from "./PostDetails";
-import CommentForm from "./CommentForm";
+import MessageForm from "./MessageForm";
 
 const PostPage = ({ posts, token, fetchPosts }) => {
     const params = useParams();
@@ -29,7 +29,7 @@ const PostPage = ({ posts, token, fetchPosts }) => {
         <div id="post-div">
             <PostDetails posts={post} token={token} onDelete={onDelete}/>
         </div>
-        <CommentForm token={token} POST_ID={post._id}/>
+        <MessageForm token={token} POST_ID={post._id}/>
        </>
     )
 }
