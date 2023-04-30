@@ -9,6 +9,7 @@ const PostForm = ({ fetchPosts, token }) => {
     const [location, setLocation] = useState('');
     const [price, setPrice] = useState('');
     const [description, setDescription] = useState('');
+    const [willDeliver, setWillDeliver] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
@@ -19,6 +20,7 @@ const PostForm = ({ fetchPosts, token }) => {
                 description,
                 price,
                 location,
+                willDeliver,
             }
         }
 
@@ -36,6 +38,7 @@ const PostForm = ({ fetchPosts, token }) => {
             setLocation('');
             setPrice('');
             setDescription('');
+            setWillDeliver(false);
             await fetchPosts();
 
             history.push('/posts');
@@ -82,6 +85,15 @@ const PostForm = ({ fetchPosts, token }) => {
                             type="text"
                             value={description}
                             onChange={event => setDescription(event.target.value)}
+                        />
+                    </div>
+                    <div>
+                        <label htmlFor="willDeliver">Will Deliver</label>
+                        <input
+                            name="willDeliver"
+                            type="checkbox"
+                            checked={willDeliver}
+                            onChange={event => setWillDeliver(event.target.checked)}
                         />
                     </div>
                     <button type="submit">Post</button>
